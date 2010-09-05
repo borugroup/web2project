@@ -233,7 +233,7 @@ function setDepartment(department_id_string){
 		</tr>
 		<tr>
 			<td align="right" nowrap="nowrap"><?php echo $AppUI->_('Start Date'); ?></td>
-			<td nowrap="nowrap">	 
+			<td nowrap="nowrap">
 				<input type="hidden" name="project_start_date" id="project_start_date" value="<?php echo $start_date ? $start_date->format(FMT_TIMESTAMP_DATE) : ''; ?>" />
 				<input type="text" name="start_date" id="start_date" onchange="setDate('editFrm', 'start_date');" value="<?php echo $start_date ? $start_date->format($df) : ''; ?>" class="text" />
 				<a href="javascript: void(0);" onclick="return showCalendar('start_date', '<?php echo $df ?>', 'editFrm', null, true)">
@@ -273,7 +273,7 @@ function setDepartment(department_id_string){
 		</tr>
 		<tr>
 			<td align="right" nowrap="nowrap"><?php echo $AppUI->_('Target Finish Date'); ?></td>
-			<td nowrap="nowrap">	
+			<td nowrap="nowrap">
 				<input type="hidden" name="project_end_date" id="project_end_date" value="<?php echo $end_date ? $end_date->format(FMT_TIMESTAMP_DATE) : ''; ?>" />
 				<input type="text" name="end_date" id="end_date" onchange="setDate('editFrm', 'end_date');" value="<?php echo $end_date ? $end_date->format($df) : ''; ?>" class="text" />
 				<a href="javascript: void(0);" onclick="return showCalendar('end_date', '<?php echo $df ?>', 'editFrm', null, true)">
@@ -293,14 +293,14 @@ function setDepartment(department_id_string){
 		<tr>
 			<td align="right" nowrap="nowrap"><?php echo $AppUI->_('Actual Finish Date'); ?></td>
 			<td nowrap="nowrap">
-	        <?php 
+	        <?php
 				if ($project_id > 0) {
 					echo $actual_end_date ? '<a href="?m=tasks&a=view&task_id=' . $criticalTasks[0]['task_id'] . '">' : '';
 					echo $actual_end_date ? '<span ' . $style . '>' . $actual_end_date->format($df) . '</span>' : '-';
 					echo $actual_end_date ? '</a>' : '';
 				} else {
 					echo $AppUI->_('Dynamically calculated');
-				} 
+				}
 			?>
 			</td>
 		</tr>
@@ -325,6 +325,15 @@ function setDepartment(department_id_string){
 				<input type="Text" name="project_demo_url" value='<?php echo $project->project_demo_url; ?>' size="40" maxlength="255" class="text" />
 			</td>
 		</tr>
+        <tr>
+			<td colspan="3"><hr noshade="noshade" size="1" /></td>
+		</tr>
+        <tr>
+            <td colspan="2">Allow users to add task logs for others</td>
+            <td>
+                <input type="checkbox" value="1" name="project_allow_other_user_tasklogs" <?php echo $project->project_allow_other_user_tasklogs ? 'checked="checked"' : ''; ?> />
+            </td>
+        </tr>
 		<tr>
 			<td align="right" colspan="3">
 			<?php
