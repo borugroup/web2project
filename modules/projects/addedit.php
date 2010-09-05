@@ -329,7 +329,7 @@ function setDepartment(department_id_string){
 			<td colspan="3"><hr noshade="noshade" size="1" /></td>
 		</tr>
         <tr>
-            <td colspan="2">Allow users to add task logs for others</td>
+            <td colspan="2"><?php echo $AppUI->_('Allow users to add task logs for others'); ?></td>
             <td>
                 <input type="checkbox" value="1" name="project_allow_other_user_tasklogs" <?php echo $project->project_allow_other_user_tasklogs ? 'checked="checked"' : ''; ?> />
             </td>
