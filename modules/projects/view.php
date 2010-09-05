@@ -200,6 +200,10 @@ echo '<font color="' . bestColor($project->project_color_identifier) . '"><stron
 			<td align="right" nowrap="nowrap"><?php echo $AppUI->_('Staging URL'); ?>:</td>
       <td class="hilite"><?php echo w2p_url($project->project_demo_url); ?></td>
 		</tr>
+        <tr>
+            <td align="right" nowrap="nowrap"><?php echo $AppUI->_('Allow users to add task logs for others'); ?>:</td>
+            <td class="hilite"><?php echo $project->project_allow_other_user_tasklogs ? $AppUI->_('Yes') : $AppUI->_('No'); ?></td>
+        </tr>
 		<tr>
 			<td colspan="2">
 				<?php
@@ -248,7 +252,7 @@ echo '<font color="' . bestColor($project->project_color_identifier) . '"><stron
 		<tr>
 			<td align="right" nowrap="nowrap"><?php echo $AppUI->_('Worked Hours'); ?>:</td>
 			<td class="hilite" width="100%"><?php echo $project->project_worked_hours; ?></td>
-		</tr>	
+		</tr>
 		<tr>
 			<td align="right" nowrap="nowrap"><?php echo $AppUI->_('Scheduled Hours'); ?>:</td>
 			<td class="hilite" width="100%"><?php echo $total_hours ?></td>
@@ -256,7 +260,7 @@ echo '<font color="' . bestColor($project->project_color_identifier) . '"><stron
 		<tr>
 			<td align="right" nowrap="nowrap"><?php echo $AppUI->_('Project Hours'); ?>:</td>
 			<td class="hilite" width="100%"><?php echo $total_project_hours ?></td>
-		</tr>				
+		</tr>
 		<?php
 		$depts = CProject::getDepartments($AppUI, $project->project_id);
 
@@ -327,7 +331,7 @@ if ($canViewTask) {
 	$tabBox->add(W2P_BASE_DIR . '/modules/tasks/tasks', 'Tasks');
 	$tabBox->add(W2P_BASE_DIR . '/modules/tasks/tasks', 'Tasks (Inactive)');
 }
-if ( $AppUI->isActiveModule('forums') ) { 
+if ( $AppUI->isActiveModule('forums') ) {
 	if (canView('forums')) {
 		$tabBox->add(W2P_BASE_DIR . '/modules/projects/vw_forums', 'Forums');
 	}

@@ -460,8 +460,9 @@ class CProject extends CW2pObject {
         $this->w2PTrimAll();
 
         // ensure changes of state in checkboxes is captured
-        $this->project_active = (int) $this->project_active;
-        $this->project_private = (int) $this->project_private;
+        $this->project_active                    = (int) $this->project_active;
+        $this->project_private                   = (int) $this->project_private;
+        $this->project_allow_other_user_tasklogs = (int) $this->project_allow_other_user_tasklogs;
 
         $this->project_target_budget = filterCurrency($this->project_target_budget);
         $this->project_actual_budget = filterCurrency($this->project_actual_budget);
