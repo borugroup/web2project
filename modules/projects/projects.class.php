@@ -80,6 +80,7 @@ class CProject extends CW2pObject {
     public $project_parent = null;
     public $project_original_parent = null;
     public $project_location = '';
+    public $project_allow_other_user_tasklogs;
 
     public function __construct() {
         parent::__construct('projects', 'project_id');
