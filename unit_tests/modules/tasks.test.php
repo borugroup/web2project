@@ -2819,7 +2819,7 @@ class Tasks_Test extends PHPUnit_Extensions_Database_TestCase
 
         // Ensure our global setting for task_reminder_control is set properly for this
         $old_cal_working_days = $w2Pconfig['cal_working_days'];
-        $w2Pconfig['cal_working_days'] = array();
+        $w2Pconfig['cal_working_days'] = '';
 
         $nothing = array();
 
